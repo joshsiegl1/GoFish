@@ -75,7 +75,7 @@ public class Game1 : Game
         foreach (Card c in deck.Cards)
         {
             _spriteBatch.Draw(c.Texture, new Vector2(10 + i, 10), Color.White); 
-            i += 20; 
+            i += 50; 
         }
         _spriteBatch.End(); 
         base.Draw(gameTime);
