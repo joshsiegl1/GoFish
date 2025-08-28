@@ -10,7 +10,6 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-
     private SpriteFont font; 
 
     private Deck deck; 
@@ -51,7 +50,11 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        font = Content.Load<SpriteFont>("font"); 
+        font = Content.Load<SpriteFont>("font");
+        foreach (Card c in deck.Cards)
+        {
+            c.LoadContent(Content); 
+        } 
     }
 
     protected override void Update(GameTime gameTime)
@@ -67,7 +70,13 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(new Color(53, 101, 77));
-        _spriteBatch.Begin(); 
+        _spriteBatch.Begin();
+        int i = 0;
+        foreach (Card c in deck.Cards)
+        {
+            _spriteBatch.Draw(c.Texture, new Vector2(10 + i, 10), Color.White); 
+            i += 20; 
+        }
         _spriteBatch.End(); 
         base.Draw(gameTime);
     }

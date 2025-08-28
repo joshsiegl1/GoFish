@@ -2,6 +2,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
@@ -34,9 +35,25 @@ public class Card
         sbatch.DrawString(font, rank.ToString() + " of " + suit.ToString() + "s", new Vector2(10, 10), Color.White);
     }
 
-    public void Draw(SpriteBatch spritebatch, Vector2 location  )
-    { 
-        
+    public void LoadContent(ContentManager Content)
+    {
+        string fileName = "";
+        if ((int)rank < 2 || (int)rank >= 11) {
+            fileName += rank.ToString()[0]; 
+        }
+        else {
+            int rank_string = (int)rank; 
+            fileName += rank_string.ToString(); 
+        }
+
+        fileName += suit.ToString()[0]; 
+
+        texture = Content.Load<Texture2D>(fileName);
+    }
+
+    public void Draw(SpriteBatch spritebatch, Vector2 location)
+    {
+
     }
     public enum E_Suit
     {
