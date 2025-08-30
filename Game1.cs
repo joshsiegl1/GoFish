@@ -11,7 +11,6 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private SpriteFont font; 
-
     private Deck deck; 
 
     public Game1()

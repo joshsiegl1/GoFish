@@ -1,6 +1,7 @@
 #region Using Statments
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 public class Hands
@@ -35,6 +36,11 @@ public class Hands
         Flush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
         Flush.Add(new Card(Card.E_Rank.Ten, Card.E_Suit.Heart));
         Flush.Add(new Card(Card.E_Rank.Jack, Card.E_Suit.Heart));
-        Flush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart)); 
+        Flush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart));
+    }
+
+    public void Show(SpriteBatch spritebatch)
+    { 
+        
     }
 }
