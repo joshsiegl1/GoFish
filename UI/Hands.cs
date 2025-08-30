@@ -8,6 +8,8 @@ public class Hands
     public List<Card> TwoOfAKind = new List<Card>();
     public List<Card> ThreeOfAKind = new List<Card>();
     public List<Card> FourOfAKind = new List<Card>();
+    public List<Card> Straight = new List<Card>();
+    public List<Card> Flush = new List<Card>();
 
     public Hands()
     {
@@ -21,6 +23,18 @@ public class Hands
         FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
         FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Spade));
         FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Diamond));
-        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Club)); 
+        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Club));
+
+        Straight.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        Straight.Add(new Card(Card.E_Rank.Two, Card.E_Suit.Spade));
+        Straight.Add(new Card(Card.E_Rank.Three, Card.E_Suit.Club));
+        Straight.Add(new Card(Card.E_Rank.Four, Card.E_Suit.Diamond));
+        Straight.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
+
+        Flush.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        Flush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
+        Flush.Add(new Card(Card.E_Rank.Ten, Card.E_Suit.Heart));
+        Flush.Add(new Card(Card.E_Rank.Jack, Card.E_Suit.Heart));
+        Flush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart)); 
     }
 }
