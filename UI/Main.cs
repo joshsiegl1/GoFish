@@ -25,11 +25,8 @@ public class Main
     public void LoadContent(ContentManager Content)
     {
         btnShowHands.Texture = Content.Load<Texture2D>("showHandsButton");
-        cardSelector.LoadContent(Content); 
-        foreach (Card c in hands.TwoOfAKind)
-        {
-            c.LoadContent(Content);
-        }
+        cardSelector.LoadContent(Content);
+        hands.LoadContent(Content); 
     }
 
     public void Update(GameTime gametime)
