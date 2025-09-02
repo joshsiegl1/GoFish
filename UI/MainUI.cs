@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 #endregion
 
-public class Main
+public class MainUI
 {
     Hands hands;
     Button btnShowHands;
@@ -14,7 +14,7 @@ public class Main
     CardSelector cardSelector; 
     bool showHands = false;
 
-    public Main()
+    public MainUI()
     {
         hands = new Hands();
         cardSelector = new CardSelector(); 

@@ -6,8 +6,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class Hand
 {
-    const int LIMIT = 10;
+    public const int LIMIT = 10;
     List<Card> cards = new List<Card>(LIMIT);
+    public List<Card> Cards { get { return cards; } }
     public Hand()
     {
 

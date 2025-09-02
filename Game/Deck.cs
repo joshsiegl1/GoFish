@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Microsoft.Xna.Framework;
 #endregion
 
@@ -33,6 +34,33 @@ public class Deck
             newCards.Add(cards[replace]);
             cards.RemoveAt(replace);
         }
-        cards = newCards; 
+        cards = newCards;
+    }
+
+    public void Deal(ref Hand playerHand, ref Hand aiHand)
+    {
+        bool playerHandFull = false;
+        bool aiHandFull = false;
+        while (!playerHandFull && !aiHandFull)
+        {
+            if (playerHand.Cards.Count <= Hand.LIMIT)
+            {
+                playerHand.Cards.Add(removeCard());
+            }
+            else playerHandFull = true;
+
+            if (aiHand.Cards.Count <= Hand.LIMIT)
+            {
+                aiHand.Cards.Add(removeCard());
+            }
+            else aiHandFull = true; 
+        }
+    }
+
+    private Card removeCard()
+    {
+        Card c = cards[0];
+        cards.RemoveAt(0);
+        return c; 
     }
 }
