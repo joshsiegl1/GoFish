@@ -58,6 +58,7 @@
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QD.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QH.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QS.png</File>
+    <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/showHandsButton.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
@@ -102,6 +103,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>font.spritefont</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -53,3 +53,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QD.png","C:/Users/joshs/Documents/projects/gofish/GoFish/Content/bin/DesktopGL/Content/QD.xnb","TextureProcessor","Texture2DContent",1766,322645,0.0376253
 "C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QH.png","C:/Users/joshs/Documents/projects/gofish/GoFish/Content/bin/DesktopGL/Content/QH.xnb","TextureProcessor","Texture2DContent",1709,322645,0.0759695
 "C:/Users/joshs/Documents/projects/gofish/GoFish/Content/QS.png","C:/Users/joshs/Documents/projects/gofish/GoFish/Content/bin/DesktopGL/Content/QS.xnb","TextureProcessor","Texture2DContent",1616,322645,0.0374067
+"C:/Users/joshs/Documents/projects/gofish/GoFish/Content/showHandsButton.png","C:/Users/joshs/Documents/projects/gofish/GoFish/Content/bin/DesktopGL/Content/showHandsButton.xnb","TextureProcessor","Texture2DContent",2530,20085,0.1325795

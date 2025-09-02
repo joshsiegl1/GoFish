@@ -40,7 +40,10 @@ public class Hands
     }
 
     public void Show(SpriteBatch spritebatch)
-    { 
-        
+    {
+        for (int i = 0; i < TwoOfAKind.Count; i++)
+        {
+            spritebatch.Draw(TwoOfAKind[i].Texture, new Vector2(10 + (i * TwoOfAKind[i].Texture.Width) + 10, 10), Color.White); 
+        }
     }
 }

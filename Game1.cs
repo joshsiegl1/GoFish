@@ -11,11 +11,16 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private SpriteFont font; 
-    private Deck deck; 
+    private Deck deck;
+
+    private Main UIMain; 
 
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = Global.ScreenWidth;
+        _graphics.PreferredBackBufferHeight = Global.ScreenHeight;
+        _graphics.ApplyChanges();
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -24,6 +29,7 @@ public class Game1 : Game
     {
         deck = new Deck();
         deck.Populate();
+        UIMain = new Main(); 
 #if DEBUG
         int _index = 0;
         foreach (Card c in deck.Cards)
@@ -48,7 +54,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+        UIMain.LoadContent(Content); 
         font = Content.Load<SpriteFont>("font");
         foreach (Card c in deck.Cards)
         {
@@ -61,7 +67,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
+        UIMain.Update(gameTime); 
 
         base.Update(gameTime);
     }
@@ -70,12 +76,13 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(new Color(53, 101, 77));
         _spriteBatch.Begin();
-        int i = 0;
-        foreach (Card c in deck.Cards)
-        {
-            _spriteBatch.Draw(c.Texture, new Vector2(10 + i, 10), Color.White); 
-            i += 50; 
-        }
+        UIMain.Draw(_spriteBatch); 
+        // int i = 0;
+        // foreach (Card c in deck.Cards)
+        // {
+        //     _spriteBatch.Draw(c.Texture, new Vector2(10 + i, 10), Color.White); 
+        //     i += 50; 
+        // }
         _spriteBatch.End(); 
         base.Draw(gameTime);
     }
