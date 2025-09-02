@@ -1,11 +1,14 @@
 #region Using Statments
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 public class Hands
 {
+    private float normalizedScale = 3; 
+    private float scale = 1f; 
     public List<Card> TwoOfAKind = new List<Card>();
     public List<Card> ThreeOfAKind = new List<Card>();
     public List<Card> FourOfAKind = new List<Card>();
@@ -14,6 +17,7 @@ public class Hands
 
     public Hands()
     {
+        scale = scale / normalizedScale; 
         TwoOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
         TwoOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Spade));
 
@@ -43,7 +47,10 @@ public class Hands
     {
         for (int i = 0; i < TwoOfAKind.Count; i++)
         {
-            spritebatch.Draw(TwoOfAKind[i].Texture, new Vector2(10 + (i * TwoOfAKind[i].Texture.Width) + 10, 10), Color.White); 
+            Texture2D t = TwoOfAKind[i].Texture; 
+            spritebatch.Draw(t, new Vector2(100 + (i * t.Width / normalizedScale) + 10, 100),
+             null, Color.White, 0f, new Vector2(t.Width / normalizedScale, t.Height / normalizedScale),
+             scale, SpriteEffects.None, 1f); 
         }
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 public class Deck
 {
-    const int LIMIT = 52;
+    public const int LIMIT = 52;
     private List<Card> cards = new List<Card>(LIMIT);
     public List<Card> Cards { get { return cards; } }
     public Deck() { }

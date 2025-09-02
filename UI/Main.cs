@@ -10,11 +10,14 @@ public class Main
 {
     Hands hands;
     Button btnShowHands;
+
+    CardSelector cardSelector; 
     bool showHands = false;
 
     public Main()
     {
-        hands = new Hands(); 
+        hands = new Hands();
+        cardSelector = new CardSelector(); 
         btnShowHands = new Button(new Vector2(Global.ScreenWidth - 120, 10));
         btnShowHands.onClick += onShowHands;
     }
@@ -22,15 +25,17 @@ public class Main
     public void LoadContent(ContentManager Content)
     {
         btnShowHands.Texture = Content.Load<Texture2D>("showHandsButton");
+        cardSelector.LoadContent(Content); 
         foreach (Card c in hands.TwoOfAKind)
         {
-            c.LoadContent(Content); 
+            c.LoadContent(Content);
         }
     }
 
     public void Update(GameTime gametime)
     {
-        btnShowHands.Update(gametime); 
+        btnShowHands.Update(gametime);
+        cardSelector.Update(gametime); 
     }
 
     public void onShowHands(object sender, EventArgs e)
@@ -43,8 +48,9 @@ public class Main
         btnShowHands.Draw(spriteBatch);
         if (showHands)
         {
-            hands.Show(spriteBatch); 
+            hands.Show(spriteBatch);
         }
+        cardSelector.Draw(spriteBatch); 
     }
 
 }
