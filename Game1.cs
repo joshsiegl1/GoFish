@@ -33,6 +33,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        Card.BackTexture = Content.Load<Texture2D>("cardback"); 
         UIMain.LoadContent(Content);
         GameMain.LoadContent(Content); 
         font = Content.Load<SpriteFont>("font");
@@ -53,8 +54,8 @@ public class Game1 : Game
     {
         GraphicsDevice.Clear(new Color(53, 101, 77));
         _spriteBatch.Begin();
-        UIMain.Draw(_spriteBatch);
         GameMain.Draw(_spriteBatch); 
+        UIMain.Draw(_spriteBatch);
         _spriteBatch.End(); 
         base.Draw(gameTime);
     }

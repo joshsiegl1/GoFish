@@ -85,3 +85,4 @@ C:\Users\joshs\Documents\projects\gofish\GoFish\bin\Debug\net8.0\Content\QH.xnb
 C:\Users\joshs\Documents\projects\gofish\GoFish\bin\Debug\net8.0\Content\QS.xnb
 C:\Users\joshs\Documents\projects\gofish\GoFish\obj\Debug\net8.0\GoFish.sourcelink.json
 C:\Users\joshs\Documents\projects\gofish\GoFish\bin\Debug\net8.0\Content\showHandsButton.xnb
+C:\Users\joshs\Documents\projects\gofish\GoFish\bin\Debug\net8.0\Content\cardback.xnb

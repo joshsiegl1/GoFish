@@ -14,8 +14,18 @@ public class Hand
 
     }
 
-    public void DrawHand(SpriteBatch spritebatch)
-    { 
-        
+    public void DrawHand(SpriteBatch spritebatch, bool face)
+    {
+        if (face)
+        {
+
+        }
+        else
+        {
+            for (int i = 0; i < cards.Count; i++)
+            {
+                spritebatch.Draw(Card.BackTexture, new Vector2((10 + 240 * i) + i * 10, 10), Color.White); 
+            }
+        }
     }
 }

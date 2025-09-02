@@ -21,7 +21,7 @@ public class MainGame
 
     public void Update(GameTime gametime)
     { 
-        
+
     }
 
     public void LoadContent(ContentManager Content)
@@ -33,7 +33,7 @@ public class MainGame
     }
 
     public void Draw(SpriteBatch spritebatch)
-    { 
-
+    {
+        aiHand.DrawHand(spritebatch, false); 
     }
 }

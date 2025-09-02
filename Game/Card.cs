@@ -7,32 +7,21 @@ using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 public class Card
-{   
+{
+    public static Texture2D BackTexture;    
     private Texture2D texture;
     public Texture2D Texture { get { return texture; } set { texture = value; }} 
     E_Rank rank;
     public E_Rank Rank { get { return rank;  } }
     E_Suit suit;
     public E_Suit Suit { get { return suit; } }
+
+    private float scale = 1f;
+    private float normalizedScale = 3; 
     public Card(E_Rank r, E_Suit s)
     {
         this.rank = r;
         this.suit = s;
-    }
-
-    public void DisplayToConsole()
-    {
-        Console.WriteLine(rank.ToString() + " of " + suit.ToString() + "s"); 
-    }
-
-    public void DisplayToDebugConsole()
-    {
-        System.Diagnostics.Debug.WriteLine(rank.ToString() + " of " + suit.ToString() + "s"); 
-    }
-
-    public void DisplayToString(SpriteBatch sbatch, SpriteFont font)
-    {
-        sbatch.DrawString(font, rank.ToString() + " of " + suit.ToString() + "s", new Vector2(10, 10), Color.White);
     }
 
     public void LoadContent(ContentManager Content)
@@ -53,7 +42,9 @@ public class Card
 
     public void Draw(SpriteBatch spritebatch, Vector2 location)
     {
-
+        spritebatch.Draw(texture, location, null, Color.White, 0f,
+        new Vector2(texture.Width / normalizedScale, texture.Height / normalizedScale),
+             scale, SpriteEffects.None, 1f);
     }
     public enum E_Suit
     {

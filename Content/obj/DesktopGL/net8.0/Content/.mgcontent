@@ -45,6 +45,7 @@
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/AH.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/AS.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/blank_sample.png</File>
+    <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/cardback.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/File.spritefont</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/JC.png</File>
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/JD.png</File>
@@ -61,6 +62,7 @@
     <File>C:/Users/joshs/Documents/projects/gofish/GoFish/Content/showHandsButton.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
