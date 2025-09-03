@@ -23,15 +23,23 @@ public class Button
 
     private MouseState PMS;
     private MouseState M; 
+    bool isMouseCursor = false; 
     public void Update(GameTime gametime)
     {
         M = Mouse.GetState();
         if (Bounds().Contains(M.Position))
         {
+            Mouse.SetCursor(MouseCursor.Hand);
+            isMouseCursor = true; 
             if (M.LeftButton == ButtonState.Pressed && PMS.LeftButton == ButtonState.Released)
             {
-                onClick(null, null); 
+                onClick(null, null);
             }
+        }
+        else if (isMouseCursor)
+        {
+            Mouse.SetCursor(MouseCursor.Arrow);
+            isMouseCursor = false; 
         }
         PMS = M;
     }

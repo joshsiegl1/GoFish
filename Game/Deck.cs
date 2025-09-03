@@ -9,15 +9,17 @@ using Microsoft.Xna.Framework;
 public class Deck
 {
     public const int LIMIT = 52;
+    private const int SUIT_COUNT = 4;
+    private const int RANK_COUNT = 13; 
     private List<Card> cards = new List<Card>(LIMIT);
     public List<Card> Cards { get { return cards; } }
     public Deck() { }
 
     public void Populate()
     {
-        for (int s = 1; s <= 4; s++)
+        for (int s = 1; s <= SUIT_COUNT; s++)
         {
-            for (int r = 1; r <= 13; r++)
+            for (int r = 1; r <= RANK_COUNT; r++)
             {
                 cards.Add(new Card((Card.E_Rank)r, (Card.E_Suit)s));
             }

@@ -49,7 +49,13 @@ public class Hands
         StraightFlush.Add(new Card(Card.E_Rank.Two, Card.E_Suit.Heart));
         StraightFlush.Add(new Card(Card.E_Rank.Three, Card.E_Suit.Heart));
         StraightFlush.Add(new Card(Card.E_Rank.Four, Card.E_Suit.Heart));
-        StraightFlush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart)); 
+        StraightFlush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
+
+        RoyalFlush.Add(new Card(Card.E_Rank.Ten, Card.E_Suit.Heart));
+        RoyalFlush.Add(new Card(Card.E_Rank.Jack, Card.E_Suit.Heart));
+        RoyalFlush.Add(new Card(Card.E_Rank.Queen, Card.E_Suit.Heart));
+        RoyalFlush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart));
+        RoyalFlush.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart)); 
     }
 
     public void LoadContent(ContentManager Content)
@@ -65,6 +71,8 @@ public class Hands
         foreach (Card c in Flush)
             c.LoadContent(Content);
         foreach (Card c in StraightFlush)
+            c.LoadContent(Content);
+        foreach (Card c in RoyalFlush)
             c.LoadContent(Content); 
     }
 
@@ -103,13 +111,19 @@ public class Hands
         for (int i = 0; i < StraightFlush.Count; i++)
         {
             Texture2D t = StraightFlush[i].Texture;
-            DrawCard(t, i, 6, spritebatch); 
+            DrawCard(t, i, 6, spritebatch);
+        }
+
+        for (int i = 0; i < RoyalFlush.Count; i++)
+        {
+            Texture2D t = RoyalFlush[i].Texture;
+            DrawCard(t, i, 7, spritebatch); 
         }
     }
 
     private void DrawCard(Texture2D t, int i, int y, SpriteBatch spriteBatch)
     {
-        spriteBatch.Draw(t, new Vector2(100 + (i * t.Width / normalizedScale) + 5 * i, 50 * y),
+        spriteBatch.Draw(t, new Vector2(100 + (i * t.Width / normalizedScale) + 5 * i, (50 * y) + 20),
              null, Color.White, 0f, new Vector2(t.Width / normalizedScale, t.Height / normalizedScale),
              scale, SpriteEffects.None, 1f);
     }
