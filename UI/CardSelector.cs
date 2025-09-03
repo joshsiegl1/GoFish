@@ -11,6 +11,8 @@ public class CardSelector
     private MouseState M, PMS;
     private Deck deck;
     private int drawIndex = 0;
+    float scale = 1f;
+    float normalizedScale = 2f; 
     public CardSelector()
     {
         deck = new Deck();
@@ -52,6 +54,8 @@ public class CardSelector
     public void Draw(SpriteBatch spriteBatch)
     {
         Texture2D card = deck.Cards[drawIndex].Texture;
-        spriteBatch.Draw(card, new Vector2(Global.ScreenWidth - card.Width - 20, 500), Color.White);
+        spriteBatch.Draw(card, new Vector2(Global.ScreenWidth - card.Width * (scale / normalizedScale) - 20, 500), null, Color.White, 0f,
+        new Vector2(card.Width / normalizedScale, card.Height / normalizedScale),
+             scale / normalizedScale, SpriteEffects.None, 1f);
     }
 }
