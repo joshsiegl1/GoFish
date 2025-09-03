@@ -15,7 +15,6 @@ public class Card
     public E_Rank Rank { get { return rank;  } }
     E_Suit suit;
     public E_Suit Suit { get { return suit; } }
-
     private float scale = 1f;
     private float normalizedScale = 3; 
     public Card(E_Rank r, E_Suit s)
@@ -23,7 +22,14 @@ public class Card
         this.rank = r;
         this.suit = s;
     }
-
+    public override bool Equals(object obj)
+    {
+        if (obj is Card other)
+        {
+            return this.suit == other.suit && this.rank == other.rank; 
+        }
+        return false;
+    }
     public void LoadContent(ContentManager Content)
     {
         string fileName = "";
