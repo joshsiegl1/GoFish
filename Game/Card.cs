@@ -30,18 +30,36 @@ public class Card
         }
         return false;
     }
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Suit, Rank);
+    }
+    public static bool operator ==(Card left, Card right)
+    {
+        if (ReferenceEquals(left, right)) return true;
+        if (left is null || right is null) return false;
+        return left.Equals(right);
+    }
+
+    // Define != operator
+    public static bool operator !=(Card left, Card right)
+    {
+        return !(left == right);
+    }
     public void LoadContent(ContentManager Content)
     {
         string fileName = "";
-        if ((int)rank < 2 || (int)rank >= 11) {
-            fileName += rank.ToString()[0]; 
+        if ((int)rank < 2 || (int)rank >= 11)
+        {
+            fileName += rank.ToString()[0];
         }
-        else {
-            int rank_string = (int)rank; 
-            fileName += rank_string.ToString(); 
+        else
+        {
+            int rank_string = (int)rank;
+            fileName += rank_string.ToString();
         }
 
-        fileName += suit.ToString()[0]; 
+        fileName += suit.ToString()[0];
 
         texture = Content.Load<Texture2D>(fileName);
     }
