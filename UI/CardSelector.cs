@@ -54,7 +54,7 @@ public class CardSelector
     public void Draw(SpriteBatch spriteBatch)
     {
         Texture2D card = deck.Cards[drawIndex].Texture;
-        spriteBatch.Draw(card, new Vector2(Global.ScreenWidth - card.Width * (scale / normalizedScale) - 20, 500), null, Color.White, 0f,
+        spriteBatch.Draw(card, new Vector2(Global.ScreenWidth - card.Width / 2, 350), null, Color.White, 0f,
         new Vector2(card.Width / normalizedScale, card.Height / normalizedScale),
              scale / normalizedScale, SpriteEffects.None, 1f);
     }

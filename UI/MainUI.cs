@@ -18,7 +18,7 @@ public class MainUI
     {
         hands = new Hands();
         cardSelector = new CardSelector(); 
-        btnShowHands = new Button(new Vector2(Global.ScreenWidth - 120, 10));
+        btnShowHands = new Button(new Vector2(Global.ScreenWidth - 170, 150));
         btnShowHands.onClick += onShowHands;
     }
 
