@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class Card
 {
+    public const int Width = 240;
+    public const int Height = 336; 
     public static Texture2D BackTexture;    
     private Texture2D texture;
     public Texture2D Texture { get { return texture; } set { texture = value; }} 
@@ -16,17 +18,22 @@ public class Card
     E_Suit suit;
     public E_Suit Suit { get { return suit; } }
     private float scale = 1f;
-    private float normalizedScale = 3; 
+    private float normalizedScale = 3;
+    public Vector2 Location = Vector2.Zero; 
     public Card(E_Rank r, E_Suit s)
     {
         this.rank = r;
         this.suit = s;
     }
+    public Rectangle Bounds()
+    {
+        return new Rectangle((int)Location.X, (int)Location.Y, Width, Height); 
+    }
     public override bool Equals(object obj)
     {
         if (obj is Card other)
         {
-            return this.suit == other.suit && this.rank == other.rank; 
+            return this.suit == other.suit && this.rank == other.rank;
         }
         return false;
     }
@@ -40,8 +47,6 @@ public class Card
         if (left is null || right is null) return false;
         return left.Equals(right);
     }
-
-    // Define != operator
     public static bool operator !=(Card left, Card right)
     {
         return !(left == right);

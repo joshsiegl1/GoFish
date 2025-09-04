@@ -7,9 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 public class Hand
 {
     public const int LIMIT = 10;
-    List<Card> cards = new List<Card>(LIMIT);
+    protected List<Card> cards = new List<Card>(LIMIT);
     public List<Card> Cards { get { return cards; } }
-
     float scale = 1f;
     float normalizedScale = 4f; 
     public Hand()
@@ -17,11 +16,17 @@ public class Hand
 
     }
 
-    public void DrawHand(SpriteBatch spritebatch, bool face)
+    public virtual void Update(GameTime gameTime)
+    { 
+        
+    }
+
+    public virtual void DrawHand(SpriteBatch spritebatch, bool face)
     {
         if (face)
         {
-            for (int i = 0; i < cards.Count; i++) {
+            for (int i = 0; i < cards.Count; i++)
+            {
                 spritebatch.Draw(cards[i].Texture,
                 new Vector2((50 + (240 / normalizedScale) * i + (5 * i)), Global.ScreenHeight - 100), null, Color.White, 0f,
                         new Vector2(Card.BackTexture.Width / normalizedScale, Card.BackTexture.Height / normalizedScale),
