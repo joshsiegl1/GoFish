@@ -14,8 +14,8 @@ public class MainGame
         deck = new Deck();
         deck.Populate();
         deck.Shuffle();
-        playerHand = new Hand();
-        aiHand = new Hand();
+        playerHand = new PlayerHand();
+        aiHand = new AiHand();
     }
 
     public void Update(GameTime gametime)
@@ -34,7 +34,7 @@ public class MainGame
 
     public void Draw(SpriteBatch spritebatch)
     {
-        playerHand.DrawHand(spritebatch, true); 
-        aiHand.DrawHand(spritebatch, false); 
+        playerHand.Draw(spritebatch); 
+        aiHand.Draw(spritebatch); 
     }
 }
