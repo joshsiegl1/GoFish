@@ -18,16 +18,17 @@ public class Card
     E_Suit suit;
     public E_Suit Suit { get { return suit; } }
     private float scale = 1f;
-    private float normalizedScale = 3;
+    public float normalizedScale = 3;
     public Vector2 Location = Vector2.Zero; 
     public Card(E_Rank r, E_Suit s)
     {
         this.rank = r;
         this.suit = s;
     }
+
     public Rectangle Bounds()
     {
-        return new Rectangle((int)Location.X, (int)Location.Y, Width, Height); 
+        return new Rectangle((int)Location.X, (int)Location.Y, Width / 5, Height / 5);
     }
     public override bool Equals(object obj)
     {

@@ -18,9 +18,23 @@ public class MainGame
         aiHand = new AiHand();
     }
 
-    public void Update(GameTime gametime)
-    { 
+    /// <summary>
+    /// This is used to check the bounding box for card highlights on windows
+    /// Probably needs to be reworked
+    /// </summary>
+    private void SetPlayerHandCardLocations()
+    {
+        for (int i = 0; i < playerHand.Cards.Count; i++)
+        {
+            playerHand.Cards[i].Location =
+                new Vector2(50 + (240 / playerHand.Cards[i].normalizedScale) * i + (5 * i), Global.ScreenHeight - 100);
+        }
+    }
 
+    public void Update(GameTime gametime)
+    {
+        aiHand.Update(gametime);
+        playerHand.Update(gametime); 
     }
 
     public void LoadContent(ContentManager Content)
@@ -29,7 +43,8 @@ public class MainGame
         {
             c.LoadContent(Content);
         }
-        deck.Deal(ref playerHand, ref aiHand); 
+        deck.Deal(ref playerHand, ref aiHand);
+        SetPlayerHandCardLocations();  
     }
 
     public void Draw(SpriteBatch spritebatch)
