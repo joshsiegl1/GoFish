@@ -26,7 +26,7 @@ public class Card
         this.suit = s;
     }
 
-    public Rectangle Bounds()
+    public Rectangle Bounds() 
     {
         return new Rectangle((int)Location.X, (int)Location.Y, Width / 5, Height / 5);
     }
@@ -83,7 +83,6 @@ public class Card
         Heart,
         Club
     }
-
     public enum E_Rank
     {
         Ace = 1, 
