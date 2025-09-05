@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 #endregion
 
 public class DrawableCard : Card
@@ -21,6 +22,10 @@ public class DrawableCard : Card
     public Rectangle Bounds() 
     {
         return new Rectangle((int)Location.X, (int)Location.Y, Width / 5, Height / 5);
+    }
+    public virtual void Update(GameTime gameTime)
+    {
+
     }
     public void LoadContent(ContentManager Content)
     {

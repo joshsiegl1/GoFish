@@ -7,8 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 public class MainGame
 {
     private DrawableDeck deck;
-    private Hand playerHand;
-    private Hand aiHand;
+    private PlayerHand playerHand;
+    private AiHand aiHand;
     public MainGame()
     {
         deck = new DrawableDeck();
@@ -27,7 +27,7 @@ public class MainGame
         for (int i = 0; i < playerHand.Cards.Count; i++)
         {
             playerHand.Cards[i].Location =
-                new Vector2(50 + (240 / playerHand.Cards[i].normalizedScale) * i + (5 * i), Global.ScreenHeight - 100);
+                new Vector2(50 + (240 / playerHand.PlayerCards[i].normalizedScale) * i + (5 * i), Global.ScreenHeight - 100);
         }
     }
 

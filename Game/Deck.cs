@@ -10,7 +10,7 @@ public class Deck
 {
     public const int LIMIT = 52;
     private const int SUIT_COUNT = 4;
-    private const int RANK_COUNT = 13; 
+    private const int RANK_COUNT = 13;
     private List<Card> cards = new List<Card>(LIMIT);
     public List<Card> Cards { get { return cards; } }
     public Deck() { }
@@ -39,7 +39,7 @@ public class Deck
         cards = newCards;
     }
 
-    public void Deal(ref Hand playerHand, ref Hand aiHand)
+    public void Deal(ref PlayerHand playerHand, ref AiHand aiHand)
     {
         bool playerHandFull = false;
         bool aiHandFull = false;
@@ -47,22 +47,29 @@ public class Deck
         {
             if (playerHand.Cards.Count <= Hand.LIMIT)
             {
-                playerHand.Cards.Add(removeCard());
+                playerHand.PlayerCards.Add(RemoveCard(true));
             }
             else playerHandFull = true;
 
             if (aiHand.Cards.Count <= Hand.LIMIT)
             {
-                aiHand.Cards.Add(removeCard());
+                aiHand.Cards.Add(RemoveCard());
             }
-            else aiHandFull = true; 
+            else aiHandFull = true;
         }
     }
 
-    private DrawableCard removeCard()
+    private PlayerCard RemoveCard(bool isPlayer = true)
+    {
+        PlayerCard c = new PlayerCard(Cards[0].Rank, Cards[0].Suit);
+        cards.RemoveAt(0);
+        return c;
+    }
+
+    private DrawableCard RemoveCard()
     {
         DrawableCard c = (DrawableCard)cards[0];
         cards.RemoveAt(0);
-        return c; 
+        return c;
     }
 }

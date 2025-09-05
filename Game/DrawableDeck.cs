@@ -38,31 +38,38 @@ public class DrawableDeck
         cards = newCards; 
     }
 
-    public void Deal(ref Hand playerHand, ref Hand aiHand)
+    public void Deal(ref PlayerHand playerHand, ref AiHand aiHand)
     { 
         bool playerHandFull = false;
         bool aiHandFull = false;
         while (!playerHandFull && !aiHandFull)
         {
-            if (playerHand.Cards.Count <= Hand.LIMIT)
+            if (playerHand.PlayerCards.Count <= Hand.LIMIT)
             {
-                playerHand.Cards.Add(removeCard());
+                playerHand.PlayerCards.Add(RemoveCard(true));
             }
             else playerHandFull = true;
 
             if (aiHand.Cards.Count <= Hand.LIMIT)
             {
-                aiHand.Cards.Add(removeCard());
+                aiHand.Cards.Add(RemoveCard());
             }
             else aiHandFull = true; 
         }
     }
 
+    private PlayerCard RemoveCard(bool isPlayer = true)
+    {
+        PlayerCard c = new PlayerCard(Cards[0].Rank, Cards[0].Suit);
+        c.Texture = Cards[0].Texture;
+        cards.RemoveAt(0);
+        return c;
+    }
     private DrawableCard removeCard()
     {
         DrawableCard c = cards[0];
         cards.RemoveAt(0);
-        return c; 
+        return c;
     }
 
     public void LoadContent(ContentManager Content)
