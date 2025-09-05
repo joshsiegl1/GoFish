@@ -17,7 +17,7 @@ public class PlayerHand : Hand
         {
             spritebatch.Draw(cards[i].Texture,
             new Vector2((50 + (240 / normalizedScale) * i + (5 * i)), Global.ScreenHeight - 100), null, Color.White, 0f,
-                    new Vector2(Card.Width / normalizedScale, Card.Height / normalizedScale),
+                    new Vector2(DrawableCard.Width / normalizedScale, DrawableCard.Height / normalizedScale),
                     scale / normalizedScale, SpriteEffects.None, 1f);
         }
         base.Draw(spritebatch);

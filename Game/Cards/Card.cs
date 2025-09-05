@@ -7,23 +7,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class Card
 {
-    public const int Width = 240;
-    public const int Height = 336; 
-    public static Texture2D BackTexture;    
     protected E_Rank rank;
     public E_Rank Rank { get { return rank;  } }
     protected E_Suit suit;
     public E_Suit Suit { get { return suit; } }
-    public Vector2 Location = Vector2.Zero; 
     public Card(E_Rank r, E_Suit s)
     {
         this.rank = r;
         this.suit = s;
-    }
-
-    public Rectangle Bounds() 
-    {
-        return new Rectangle((int)Location.X, (int)Location.Y, Width / 5, Height / 5);
     }
     public override bool Equals(object obj)
     {

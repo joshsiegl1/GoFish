@@ -20,11 +20,11 @@ public class CardSelector
     {
         deck = new DrawableDeck();
         deck.Populate();
-        location = new Vector2(Global.ScreenWidth - Card.Width / 2, 350); 
+        location = new Vector2(Global.ScreenWidth - DrawableCard.Width / 2, 350); 
     }
     private Rectangle bounds()
     {
-        return new Rectangle((int)location.X - Card.Width / 4, (int)location.Y - Card.Height / 4, Card.Width / 2, Card.Height / 2); 
+        return new Rectangle((int)location.X - DrawableCard.Width / 4, (int)location.Y - DrawableCard.Height / 4, DrawableCard.Width / 2, DrawableCard.Height / 2); 
     }
     public void Update(GameTime gametime)
     {

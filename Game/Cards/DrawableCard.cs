@@ -6,13 +6,21 @@ using Microsoft.Xna.Framework.Content;
 
 public class DrawableCard : Card
 {
+    public const int Width = 240;
+    public const int Height = 336; 
+    public static Texture2D BackTexture;    
     protected Texture2D texture;
     public Texture2D Texture { get { return texture; } set { texture = value; } }
     private float scale = 1f;
     public float normalizedScale = 3;
+    public Vector2 Location = Vector2.Zero; 
     public DrawableCard(E_Rank r, E_Suit s) : base(r, s)
     {
 
+    }
+    public Rectangle Bounds() 
+    {
+        return new Rectangle((int)Location.X, (int)Location.Y, Width / 5, Height / 5);
     }
     public void LoadContent(ContentManager Content)
     {

@@ -10,7 +10,6 @@ public class MainUI
 {
     Hands hands;
     Button btnShowHands;
-
     CardSelector cardSelector; 
     bool showHands = false;
 

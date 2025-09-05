@@ -33,7 +33,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        Card.BackTexture = Content.Load<Texture2D>("cardback"); 
+        DrawableCard.BackTexture = Content.Load<Texture2D>("cardback"); 
         UIMain.LoadContent(Content);
         GameMain.LoadContent(Content); 
         font = Content.Load<SpriteFont>("font");
