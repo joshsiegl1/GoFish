@@ -6,12 +6,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 public class MainGame
 {
-    private Deck deck;
+    private DrawableDeck deck;
     private Hand playerHand;
     private Hand aiHand;
     public MainGame()
     {
-        deck = new Deck();
+        deck = new DrawableDeck();
         deck.Populate();
         deck.Shuffle();
         playerHand = new PlayerHand();
@@ -39,7 +39,7 @@ public class MainGame
 
     public void LoadContent(ContentManager Content)
     {
-        foreach (Card c in deck.Cards)
+        foreach (DrawableCard c in deck.Cards)
         {
             c.LoadContent(Content);
         }

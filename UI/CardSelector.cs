@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 public class CardSelector
 {
     private MouseState M, PMS;
-    private Deck deck;
+    private DrawableDeck deck;
     private int drawIndex = 0;
     float scale = 1f;
     float normalizedScale = 2f;
@@ -18,7 +18,7 @@ public class CardSelector
     Vector2 location = Vector2.Zero;
     public CardSelector()
     {
-        deck = new Deck();
+        deck = new DrawableDeck();
         deck.Populate();
         location = new Vector2(Global.ScreenWidth - Card.Width / 2, 350); 
     }
@@ -62,10 +62,7 @@ public class CardSelector
 
     public void LoadContent(ContentManager Content)
     {
-        foreach (Card c in deck.Cards)
-        {
-            c.LoadContent(Content); 
-        }
+        deck.LoadContent(Content); 
     }
 
     public void Draw(SpriteBatch spriteBatch)

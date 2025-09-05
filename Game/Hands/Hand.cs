@@ -7,8 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 public abstract class Hand
 {
     public const int LIMIT = 10;
-    protected List<Card> cards = new List<Card>(LIMIT);
-    public List<Card> Cards { get { return cards; } }
+    protected List<DrawableCard> cards = new List<DrawableCard>(LIMIT);
+    public List<DrawableCard> Cards { get { return cards; } }
     protected float scale = 1f;
     protected float normalizedScale = 4f; 
     public Hand()

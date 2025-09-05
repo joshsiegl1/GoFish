@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-public class AiCard : Card
+public class AiCard : DrawableCard
 {
     public AiCard(E_Rank r, E_Suit s) : base(r, s)
     { 

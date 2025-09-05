@@ -10,70 +10,70 @@ public class Hands
 {
     private float normalizedScale = 3;
     private float scale = 1f;
-    public List<Card> TwoOfAKind = new List<Card>();
-    public List<Card> ThreeOfAKind = new List<Card>();
-    public List<Card> FourOfAKind = new List<Card>();
-    public List<Card> Straight = new List<Card>();
-    public List<Card> Flush = new List<Card>();
-    public List<Card> StraightFlush = new List<Card>();
-    public List<Card> RoyalFlush = new List<Card>();
+    public List<DrawableCard> TwoOfAKind = new List<DrawableCard>();
+    public List<DrawableCard> ThreeOfAKind = new List<DrawableCard>();
+    public List<DrawableCard> FourOfAKind = new List<DrawableCard>();
+    public List<DrawableCard> Straight = new List<DrawableCard>();
+    public List<DrawableCard> Flush = new List<DrawableCard>();
+    public List<DrawableCard> StraightFlush = new List<DrawableCard>();
+    public List<DrawableCard> RoyalFlush = new List<DrawableCard>();
 
     public Hands()
     {
         scale = scale / normalizedScale;
-        TwoOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        TwoOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Spade));
+        TwoOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        TwoOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Spade));
 
-        ThreeOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        ThreeOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Spade));
-        ThreeOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Diamond));
+        ThreeOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        ThreeOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Spade));
+        ThreeOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Diamond));
 
-        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Spade));
-        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Diamond));
-        FourOfAKind.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Club));
+        FourOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        FourOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Spade));
+        FourOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Diamond));
+        FourOfAKind.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Club));
 
-        Straight.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        Straight.Add(new Card(Card.E_Rank.Two, Card.E_Suit.Spade));
-        Straight.Add(new Card(Card.E_Rank.Three, Card.E_Suit.Club));
-        Straight.Add(new Card(Card.E_Rank.Four, Card.E_Suit.Diamond));
-        Straight.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
+        Straight.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        Straight.Add(new DrawableCard(Card.E_Rank.Two, Card.E_Suit.Spade));
+        Straight.Add(new DrawableCard(Card.E_Rank.Three, Card.E_Suit.Club));
+        Straight.Add(new DrawableCard(Card.E_Rank.Four, Card.E_Suit.Diamond));
+        Straight.Add(new DrawableCard(Card.E_Rank.Five, Card.E_Suit.Heart));
 
-        Flush.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        Flush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
-        Flush.Add(new Card(Card.E_Rank.Ten, Card.E_Suit.Heart));
-        Flush.Add(new Card(Card.E_Rank.Jack, Card.E_Suit.Heart));
-        Flush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart));
+        Flush.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        Flush.Add(new DrawableCard(Card.E_Rank.Five, Card.E_Suit.Heart));
+        Flush.Add(new DrawableCard(Card.E_Rank.Ten, Card.E_Suit.Heart));
+        Flush.Add(new DrawableCard(Card.E_Rank.Jack, Card.E_Suit.Heart));
+        Flush.Add(new DrawableCard(Card.E_Rank.King, Card.E_Suit.Heart));
 
-        StraightFlush.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart));
-        StraightFlush.Add(new Card(Card.E_Rank.Two, Card.E_Suit.Heart));
-        StraightFlush.Add(new Card(Card.E_Rank.Three, Card.E_Suit.Heart));
-        StraightFlush.Add(new Card(Card.E_Rank.Four, Card.E_Suit.Heart));
-        StraightFlush.Add(new Card(Card.E_Rank.Five, Card.E_Suit.Heart));
+        StraightFlush.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart));
+        StraightFlush.Add(new DrawableCard(Card.E_Rank.Two, Card.E_Suit.Heart));
+        StraightFlush.Add(new DrawableCard(Card.E_Rank.Three, Card.E_Suit.Heart));
+        StraightFlush.Add(new DrawableCard(Card.E_Rank.Four, Card.E_Suit.Heart));
+        StraightFlush.Add(new DrawableCard(Card.E_Rank.Five, Card.E_Suit.Heart));
 
-        RoyalFlush.Add(new Card(Card.E_Rank.Ten, Card.E_Suit.Heart));
-        RoyalFlush.Add(new Card(Card.E_Rank.Jack, Card.E_Suit.Heart));
-        RoyalFlush.Add(new Card(Card.E_Rank.Queen, Card.E_Suit.Heart));
-        RoyalFlush.Add(new Card(Card.E_Rank.King, Card.E_Suit.Heart));
-        RoyalFlush.Add(new Card(Card.E_Rank.Ace, Card.E_Suit.Heart)); 
+        RoyalFlush.Add(new DrawableCard(Card.E_Rank.Ten, Card.E_Suit.Heart));
+        RoyalFlush.Add(new DrawableCard(Card.E_Rank.Jack, Card.E_Suit.Heart));
+        RoyalFlush.Add(new DrawableCard(Card.E_Rank.Queen, Card.E_Suit.Heart));
+        RoyalFlush.Add(new DrawableCard(Card.E_Rank.King, Card.E_Suit.Heart));
+        RoyalFlush.Add(new DrawableCard(Card.E_Rank.Ace, Card.E_Suit.Heart)); 
     }
 
     public void LoadContent(ContentManager Content)
     {
-        foreach (Card c in TwoOfAKind)
-            c.LoadContent(Content);
-        foreach (Card c in ThreeOfAKind)
-            c.LoadContent(Content);
-        foreach (Card c in FourOfAKind)
-            c.LoadContent(Content);
-        foreach (Card c in Straight)
-            c.LoadContent(Content);
-        foreach (Card c in Flush)
-            c.LoadContent(Content);
-        foreach (Card c in StraightFlush)
-            c.LoadContent(Content);
-        foreach (Card c in RoyalFlush)
-            c.LoadContent(Content); 
+        foreach (DrawableCard card in TwoOfAKind)
+            card.LoadContent(Content); 
+        foreach (DrawableCard card in ThreeOfAKind)
+            card.LoadContent(Content);
+        foreach (DrawableCard card in FourOfAKind)
+            card.LoadContent(Content);
+        foreach (DrawableCard card in Straight)
+            card.LoadContent(Content);
+        foreach (DrawableCard card in Flush)
+            card.LoadContent(Content);
+        foreach (DrawableCard card in StraightFlush)
+            card.LoadContent(Content);
+        foreach (DrawableCard card in RoyalFlush)
+            card.LoadContent(Content);
     }
 
     public void Show(SpriteBatch spritebatch)
