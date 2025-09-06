@@ -12,7 +12,8 @@ public class DrawableCard : Card
     public static Texture2D BackTexture;    
     protected Texture2D texture;
     public Texture2D Texture { get { return texture; } set { texture = value; } }
-    private float scale = 1f;
+    protected float scale = 1f;
+    public bool isSelected = false;
     public float normalizedScale = 3;
     public Vector2 Location = Vector2.Zero; 
     public DrawableCard(E_Rank r, E_Suit s) : base(r, s)
@@ -44,11 +45,12 @@ public class DrawableCard : Card
 
         texture = Content.Load<Texture2D>(fileName);
     }
-    
-    public virtual void Draw(SpriteBatch spritebatch, Vector2 location)
+
+    public virtual void Draw(SpriteBatch spritebatch)
     {
-        spritebatch.Draw(texture, location, null, Color.White, 0f,
+        Color color = isSelected ? Color.Green : Color.White;
+        spritebatch.Draw(texture, Location, null, color, 0f,
         new Vector2(texture.Width / normalizedScale, texture.Height / normalizedScale),
-             scale, SpriteEffects.None, 1f);
+            scale, SpriteEffects.None, 1f);
     }
 }

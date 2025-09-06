@@ -24,9 +24,9 @@ public class MainGame
     /// </summary>
     private void SetPlayerHandCardLocations()
     {
-        for (int i = 0; i < playerHand.Cards.Count; i++)
+        for (int i = 0; i < playerHand.PlayerCards.Count; i++)
         {
-            playerHand.Cards[i].Location =
+            playerHand.PlayerCards[i].Location =
                 new Vector2(50 + (240 / playerHand.PlayerCards[i].normalizedScale) * i + (5 * i), Global.ScreenHeight - 100);
         }
     }

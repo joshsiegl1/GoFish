@@ -11,6 +11,7 @@ public class PlayerHand : Hand
     public List<PlayerCard> PlayerCards { get { return playerCards; } }
     public PlayerHand()
     {
+        scale = 0.25f; 
     }
     public override void Update(GameTime gameTime)
     {
@@ -20,14 +21,20 @@ public class PlayerHand : Hand
         }
         base.Update(gameTime);
     }
+
+    /// <summary>
+    /// This is wrong, drawing should be handled by the card itself
+    /// </summary>
+    /// <param name="spritebatch"></param>
     public override void Draw(SpriteBatch spritebatch)
     {
         for (int i = 0; i < PlayerCards.Count; i++)
         {
+            Color color = PlayerCards[i].isSelected ? Color.Green : Color.White;
             spritebatch.Draw(PlayerCards[i].Texture,
-            new Vector2((50 + (240 / normalizedScale) * i + (5 * i)), Global.ScreenHeight - 100), null, Color.White, 0f,
+            new Vector2((50 + (240 / normalizedScale) * i + (5 * i)), Global.ScreenHeight - 100), null, color, 0f,
                     new Vector2(DrawableCard.Width / normalizedScale, DrawableCard.Height / normalizedScale),
-                    scale / normalizedScale, SpriteEffects.None, 1f);
+                    scale, SpriteEffects.None, 1f);
         }
         base.Draw(spritebatch);
     }
